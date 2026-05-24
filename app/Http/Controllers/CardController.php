@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\User;
 use Illuminate\Http\Request;
 
 class CardController extends Controller
@@ -11,28 +12,7 @@ class CardController extends Controller
      */
     public function index()
     {
-        $users = [
-            [
-                "id" => 1,
-                "name" => "Tonmoy",
-                "email" => "tonmoy@example.com",
-                "role" => "Frontend Developer",
-            ],
-
-            [
-                "id" => 2,
-                "name" => "Rahim",
-                "email" => "rahim@example.com",
-                "role" => "Backend Developer",
-            ],
-
-            [
-                "id" => 3,
-                "name" => "Karim",
-                "email" => "karim@example.com",
-                "role" => "UI Designer",
-            ],
-        ];
+        $users = User::all();
 
 
         return view('home', ['users' => $users]);
@@ -59,7 +39,9 @@ class CardController extends Controller
      */
     public function show(string $id)
     {
-        //
+        $user = User::find($id);
+
+        return view('profile', ['user' => $user]);
     }
 
     /**

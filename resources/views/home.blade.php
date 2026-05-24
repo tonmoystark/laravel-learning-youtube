@@ -53,9 +53,11 @@
                         {{ $user['role'] }}
                     </span>
 
-                    <button class="bg-slate-800 hover:bg-slate-700 px-4 py-2 rounded-lg text-sm transition">
+                    <a href="/profile/{{ $user->id }}">
+                        <button  class="bg-slate-800 hover:bg-slate-700 px-4 py-2 rounded-lg text-sm transition">
                         View Profile
                     </button>
+                    </a>
 
                 </div>
 
