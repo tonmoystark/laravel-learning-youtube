@@ -40,7 +40,7 @@
 
 
     {{-- Main Content --}}
-    <main class="flex-1 flex items-center justify-center px-6">
+    <main class="w-full flex items-center justify-center px-6">
 
         {{ $slot }}
 
