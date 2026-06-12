@@ -45,3 +45,7 @@ Route::get('views', function () {
 Route::get('luchu/{name}/{email}', function ($name, $email) {
     return view('testerview', compact('name', 'email'));
 });
+
+Route::get('article', function () {
+    return view('article');
+});
