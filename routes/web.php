@@ -49,3 +49,7 @@ Route::get('luchu/{name}/{email}', function ($name, $email) {
 Route::get('article', function () {
     return view('article');
 });
+
+Route::get('modern', function () {
+    return view('modernLay');
+});
