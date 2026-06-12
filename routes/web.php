@@ -34,13 +34,13 @@ Route::get('/student/{id}/{registration}', function ($id, $registration) {
     return 'student id ' . $id . ' registration number is ' . $registration;
 });
 
-// Route::get('views', function () {
-//     $name = 'testing';
-//     $email = 'test@t.bd';
-//     // return view('testerview')->with('name', $name)->with('email', $email);
-//     // return view('testerview', compact('name', 'email'));
-//     return view('testerview', ['name' => $name, 'email' => $email]);
-// });
+Route::get('views', function () {
+    $name = 'testing';
+    $email = 'test@t.bd';
+    // return view('testerview')->with('name', $name)->with('email', $email);
+    // return view('testerview', compact('name', 'email'));
+    return view('testerview', ['name' => $name, 'email' => $email]);
+});
 
 Route::get('luchu/{name}/{email}', function ($name, $email) {
     return view('testerview', compact('name', 'email'));

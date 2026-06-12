@@ -7,11 +7,9 @@
     <title>Document</title>
 </head>
 <body>
-    <h2>My email is {{ $email }}</h2>
-    <h1>My name is {{$name}}</h1>
-
-    @include('SubViews.input', [
-        'myName' => $name
-    ])
+    <div>
+        <label for="">Name</label>
+        <input type="text" name="name" required value="{{ $myName }}">
+    </div>
 </body>
 </html>
