@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\CardController;
+use App\Http\Controllers\learnController;
 use App\Http\Controllers\MessageController;
 use App\Http\Controllers\WelcomeController;
 use Illuminate\Support\Facades\Route;
@@ -52,4 +53,11 @@ Route::get('article', function () {
 
 Route::get('modern', function () {
     return view('modernLay');
+});
+
+
+// Route::get('learnControl/{id}/{name}', [learnController::class, 'index']);
+
+Route::controller(learnController::class)->group(function () {
+    Route::get('learn/{id}/{name}', 'index');
 });
