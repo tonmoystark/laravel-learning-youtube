@@ -3,6 +3,7 @@
 use App\Http\Controllers\CardController;
 use App\Http\Controllers\learnController;
 use App\Http\Controllers\MessageController;
+use App\Http\Controllers\TeacherController;
 use App\Http\Controllers\WelcomeController;
 use Illuminate\Support\Facades\Route;
 
@@ -61,3 +62,10 @@ Route::get('modern', function () {
 Route::controller(learnController::class)->group(function () {
     Route::get('learn/{id}/{name}', 'index');
 });
+
+
+Route::get('teacher', [TeacherController::class, 'index']);
+Route::get('added', [TeacherController::class, 'add']);
+Route::get('findTeach/{id}', [TeacherController::class, 'show']);
+Route::get('updated/{id}', [TeacherController::class, 'update']);
+Route::get('delete/{id}', [TeacherController::class, 'delete']);
