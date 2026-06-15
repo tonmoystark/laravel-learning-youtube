@@ -18,10 +18,8 @@ class TeacherFactory extends Factory
     public function definition(): array
     {
         return [
-            //
-            'name'=>$this->faker->name(),
-            'email'=>$this->faker->safeEmail(),
-            'age'=>$this->faker->numberBetween(15, 55),
+            //not in use now
+
         ];
     }
 }
