@@ -12,12 +12,5 @@ class Learner extends Model
     use HasFactory;
     use SoftDeletes;
     //query scope
-    public function scopeMale($query)
-    {
-        return $query->where('gender', 'm');
-    }
-    public function scopeFemale($query)
-    {
-        return $query->where('gender', 'f');
-    }
+    
 }
