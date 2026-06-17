@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\LearnerController;
 use App\Http\Controllers\StudentController;
 use App\Http\Controllers\TeacherController;
 use App\Http\Controllers\WelcomeController;
@@ -18,18 +19,14 @@ Route::fallback(function () {
 });
 
 
-Route::get('teacher', [TeacherController::class, 'index']);
-Route::get('added', [TeacherController::class, 'add']);
-Route::get('findTeach/{id}', [TeacherController::class, 'show']);
-Route::get('updated/{id}', [TeacherController::class, 'update']);
-Route::get('delete/{id}', [TeacherController::class, 'delete']);
-
-//controlling the student data
-
-Route::controller(StudentController::class)->group(function () {
-    Route::get('student', 'index');
-    Route::get('add', 'addData');
-    Route::get('show', 'showData');
-    Route::get('update', 'updateData');
-    Route::get('delete/{id}', 'deleteData');
+Route::controller(LearnerController::class)->group(function () {
+    Route::get('/learners', 'index');
+    Route::get('learner/{id}', 'showIndividual');
+    Route::get('update', 'update');
+    Route::get('add', 'add');
+    Route::get('bright', 'bright');
+    Route::get('male', 'male');
+    Route::get('female', 'female');
+    Route::get('delete/{id}', 'delete');
+    Route::get('restore', 'restore');
 });
