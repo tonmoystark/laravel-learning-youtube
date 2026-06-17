@@ -11,18 +11,22 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('messages', function (Blueprint $table) {
-            $table->id();
-            $table->foreignId('user_id')->nullable()->constrained()->cascadeOnDelete();
-            $table->string('message', 255);
-            $table->timestamps();
-        });
+        //
+        Schema::dropIfExists('teachers');
     }
+
     /**
      * Reverse the migrations.
      */
     public function down(): void
     {
-        Schema::dropIfExists('messages');
+        //
+        Schema::create('teachers', function (Blueprint $table) {
+            $table->id();
+            $table->string('name');
+            $table->string('email');
+            $table->integer('age');
+            $table->timestamps();
+        });
     }
 };
