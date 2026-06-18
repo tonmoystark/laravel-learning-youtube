@@ -25,11 +25,11 @@
                 Home
             </a>
 
-            <a href="/learners" class="hover:text-blue-400 transition">
+            <a href="/learner" class="hover:text-blue-400 transition">
                 Learners
             </a>
 
-            <a href="/learners/create" class="hover:text-blue-400 transition">
+            <a href="/learner/create" class="hover:text-blue-400 transition">
                 Add Learner
             </a>
         </div>

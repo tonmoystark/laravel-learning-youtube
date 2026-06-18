@@ -8,12 +8,13 @@
         Learners Management
     </h1>
 
-    <form class="flex gap-3">
+    <form class="flex gap-3" action="{{ URL('learner') }}" method="GET">
         <input
             type="text"
-            name="search"
             placeholder="Search learners..."
             class="border px-4 py-2 rounded-lg w-full"
+            name="search"
+            id="search"
         >
 
         <button
@@ -51,22 +52,32 @@
         {{ $learner->email }}
     </td>
 
-    <td class="px-4 py-3">
+    <td class="px-4 py-3 text-center">
         {{ $learner->age }}
     </td>
 
-    <td class="px-4 py-3">
+    <td class="px-4 py-3 text-center">
         {{ $learner->score }}
     </td>
 
-    <td class="px-4 py-3">
+    <td class="px-4 py-3 text-center">
         {{ $learner->gender }}
     </td>
     <td class="px-4 py-3 flex gap-2 justify-center">
-       <a href="" class="bg-blue-500 hover:bg-blue-600 text-white px-3 py-1 rounded-md text-sm" > Edit </a> <a href="" class="bg-red-500 hover:bg-red-600 text-white px-3 py-1 rounded-md text-sm" > Delete </a>
+       <a 
+       href="" 
+       class="bg-blue-500 hover:bg-blue-600 text-white px-3 py-1 rounded-md text-sm" 
+       > 
+            Edit 
+        </a> 
+       <a 
+       href="" 
+       class="bg-red-500 hover:bg-red-600 text-white px-3 py-1 rounded-md text-sm" 
+       > 
+            Delete 
+        </a>
     </td>
 </tr>
-
 @endforeach
 
         </tbody>

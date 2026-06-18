@@ -8,10 +8,33 @@ use Illuminate\Http\Request;
 
 class LearnerController extends Controller
 {
+
     //
-    public function index()
+    public function index(Request $request)
     {
-        $learners = Learner::all();
+        $learners = Learner::when($request->search, function ($query) use ($request) {
+            return $query->whereAny([
+                'name',
+                'email',
+                'age',
+                'score',
+                'gender'
+            ], 'like', '%' . $request->search . '%');
+        })->get();
+
         return view('learners.allLearners', compact('learners'));
+    }
+
+    //add new learner in database
+    public function add(Request $request)
+    {
+        $learner = new Learner();
+        $learner->name = $request('name');
+        $learner->email = $request('email');
+        $learner->age = $request('age');
+        $learner->score = $request('score');
+        $learner->gender = $request('gender');
+        $learner->save();
+        return redirect('/learner');
     }
 }
