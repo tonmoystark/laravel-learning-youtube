@@ -65,7 +65,7 @@
     </td>
     <td class="px-4 py-3 flex gap-2 justify-center">
        <a 
-       href="" 
+       href="/learner/edit/{{ $learner->id }}" 
        class="bg-blue-500 hover:bg-blue-600 text-white px-3 py-1 rounded-md text-sm" 
        > 
             Edit 

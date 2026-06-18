@@ -29,12 +29,30 @@ class LearnerController extends Controller
     public function add(Request $request)
     {
         $learner = new Learner();
-        $learner->name = $request('name');
-        $learner->email = $request('email');
-        $learner->age = $request('age');
-        $learner->score = $request('score');
-        $learner->gender = $request('gender');
+        $learner->name = $request->name;
+        $learner->email = $request->email;
+        $learner->age = $request->age;
+        $learner->score = $request->score;
+        $learner->gender = $request->gender;
         $learner->save();
         return redirect('/learner');
+    }
+
+    public function update(Request $request, $id)
+    {
+        $learner = Learner::findOrFail($id);
+        $learner->name = $request->name;
+        $learner->email = $request->email;
+        $learner->age = $request->age;
+        $learner->score = $request->score;
+        $learner->gender = $request->gender;
+        $learner->update();
+        return redirect('/learner');
+    }
+
+    public function edit(int $id)
+    {
+        $learner = Learner::findOrFail($id);
+        return view('learners.edit', compact('learner'));
     }
 }

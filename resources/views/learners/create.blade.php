@@ -1,13 +1,14 @@
-<x-slot>
-    <title>Add Learner</title>
-</x-slot>
 <x-layout>
+
+    <x-slot:title>
+        Add New Learner
+    </x-slot:title>
 
 <h1 class="text-3xl font-bold mb-6">
     Add New Learner
 </h1>
 
-<form action="{{ URL() }}" method="POST" class="bg-white p-6 rounded-lg shadow space-y-4">
+<form action="{{ URL('/learner/add') }}" method="POST" class="bg-white p-6 rounded-lg shadow space-y-4">
 
     @csrf
 

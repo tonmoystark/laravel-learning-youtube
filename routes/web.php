@@ -20,6 +20,8 @@ Route::fallback(function () {
 
 Route::prefix('learner')->controller(LearnerController::class)->group(function () {
     Route::get('/', 'index');
-    Route::view('/create', 'learners.add');
+    Route::view('/create', 'learners.create');
     Route::post('/add', 'add');
+    Route::get('/edit/{id}', 'edit');
+    Route::post('/update/{id}', 'update');
 });
