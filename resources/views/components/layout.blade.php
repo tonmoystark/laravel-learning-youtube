@@ -21,16 +21,16 @@
         </a>
 
         <div class="flex gap-6">
-            <a href="/" class="hover:text-blue-400 transition">
-                Home
-            </a>
-
+            
             <a href="/learner" class="hover:text-blue-400 transition">
                 Learners
             </a>
-
+            
             <a href="/learner/create" class="hover:text-blue-400 transition">
                 Add Learner
+            </a>
+            <a href="/learner/suspended" class="hover:text-blue-400 transition">
+                Suspended Learners
             </a>
         </div>
     </div>

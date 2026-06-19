@@ -62,4 +62,24 @@ class LearnerController extends Controller
         $learner->delete();
         return redirect('/learner');
     }
+
+    public function trashData()
+    {
+        $learners = Learner::onlyTrashed()->get();
+        return view('learners.trash', compact('learners'));
+    }
+    public function retrieveData(int $id)
+    {
+        $learner = Learner::onlyTrashed()->findOrFail($id);
+        $learner->restore();
+
+        return redirect('/learner');
+    }
+    public function permanentDelete(int $id)
+    {
+        $learner = Learner::onlyTrashed()->findOrFail($id);
+        $learner->forceDelete();
+
+        return redirect('/learner/suspended');
+    }
 }

@@ -1,30 +1,8 @@
-<x-slot>
-    <title>Learners Management</title>
-</x-slot>
 <x-layout>
 
-<div class="mb-6">
-    <h1 class="text-3xl font-bold mb-4">
-        Learners Management
-    </h1>
-
-    <form class="flex gap-3" action="{{ URL('learner') }}" method="GET">
-        <input
-            type="text"
-            placeholder="Search learners..."
-            class="border px-4 py-2 rounded-lg w-full"
-            name="search"
-            id="search"
-        >
-
-        <button
-            type="submit"
-            class="bg-blue-600 text-white px-5 py-2 rounded-lg"
-        >
-            Search
-        </button>
-    </form>
-</div>
+<x-slot:title>
+    Trash
+</x-slot:title>
 
 <div class="overflow-x-auto bg-white rounded-lg shadow">
 
@@ -40,7 +18,6 @@
                 <th class="px-4 py-3 text-center">Actions</th>
             </tr>
         </thead>
-
         <tbody>
             @foreach ($learners as $learner) <tr class="border-b hover:bg-slate-100 transition">
 
@@ -65,16 +42,16 @@
     </td>
     <td class="px-4 py-3 flex gap-2 justify-center">
        <a 
-       href="/learner/edit/{{ $learner->id }}" 
+       href="/learner/retrieve/{{ $learner->id }}" 
        class="bg-blue-500 hover:bg-blue-600 text-white px-3 py-1 rounded-md text-sm" 
        > 
-            Edit 
+            Retrieve 
         </a> 
        <a 
-       href="/learner/delete/{{ $learner->id }}" 
+       href="/learner/permanent-delete/{{ $learner->id }}" 
        class="bg-red-500 hover:bg-red-600 text-white px-3 py-1 rounded-md text-sm" 
        > 
-            Suspend 
+            Delete 
         </a>
     </td>
 </tr>
@@ -83,6 +60,13 @@
         </tbody>
 
     </table>
-
+    @if($learners->isEmpty())
+        <div>
+            <h1 class="text-3xl text-center my-2 font-bold ">
+                No Data in the trash
+            </h1>
+        </div>
+    @endif
 </div>
+
 </x-layout>

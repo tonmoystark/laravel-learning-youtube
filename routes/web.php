@@ -25,4 +25,7 @@ Route::prefix('learner')->controller(LearnerController::class)->group(function (
     Route::get('/edit/{id}', 'edit');
     Route::post('/update/{id}', 'update');
     Route::get('/delete/{id}', 'delete');
+    Route::get('/suspended', 'trashData');
+    Route::get('/retrieve/{id}', 'retrieveData');
+    Route::get('/permanent-delete/{id}', 'permanentDelete');
 });
