@@ -24,4 +24,5 @@ Route::prefix('learner')->controller(LearnerController::class)->group(function (
     Route::post('/add', 'add');
     Route::get('/edit/{id}', 'edit');
     Route::post('/update/{id}', 'update');
+    Route::get('/delete/{id}', 'delete');
 });

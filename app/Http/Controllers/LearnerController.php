@@ -38,7 +38,7 @@ class LearnerController extends Controller
         return redirect('/learner');
     }
 
-    public function update(Request $request, $id)
+    public function update(Request $request, int $id)
     {
         $learner = Learner::findOrFail($id);
         $learner->name = $request->name;
@@ -54,5 +54,12 @@ class LearnerController extends Controller
     {
         $learner = Learner::findOrFail($id);
         return view('learners.edit', compact('learner'));
+    }
+
+    public function delete(int $id)
+    {
+        $learner = Learner::findOrFail($id);
+        $learner->delete();
+        return redirect('/learner');
     }
 }

@@ -71,7 +71,7 @@
             Edit 
         </a> 
        <a 
-       href="" 
+       href="/learner/delete/{{ $learner->id }}" 
        class="bg-red-500 hover:bg-red-600 text-white px-3 py-1 rounded-md text-sm" 
        > 
             Delete 
