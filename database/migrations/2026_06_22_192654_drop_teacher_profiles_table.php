@@ -11,10 +11,9 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::table('learners', function (Blueprint $table) {
-            //
-            $table->softDeletes();
-        });
+        //
+        Schema::dropIfExists('teacher_profiles');
+        Schema::dropIfExists('learners');
     }
 
     /**
@@ -22,8 +21,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::table('learners', function (Blueprint $table) {
-            //
-        });
+        //
     }
 };
