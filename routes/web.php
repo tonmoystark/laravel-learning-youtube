@@ -1,16 +1,16 @@
 <?php
 
-use App\Http\Controllers\LearnerController;
-use App\Http\Controllers\WelcomeController;
+use App\Http\Controllers\HeroController;
 use Illuminate\Support\Facades\Route;
 
-Route::get('/welcome', [WelcomeController::class, 'welcome']);
+
 
 
 Route::get('/', function () {
     return 'this is the home page';
 });
 
+Route::get('/hero', [HeroController::class, 'index']);
 
 Route::fallback(function () {
     return 'this page does not exists';

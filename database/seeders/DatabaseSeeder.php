@@ -2,6 +2,8 @@
 
 namespace Database\Seeders;
 
+use App\Models\Hero;
+use App\Models\HeroProfile;
 use App\Models\Learner;
 use App\Models\teacher;
 use App\Models\User;
@@ -18,7 +20,8 @@ class DatabaseSeeder extends Seeder
     public function run(): void
     {
         // User::factory(10)->create();
-        Learner::factory(20)->create();
+        Hero::factory(10)->create();
+        HeroProfile::factory(10)->create();
         // User::factory()->create([
         //     'name' => 'Test User',
         //     'email' => 'test@example.com',
