@@ -5,6 +5,9 @@ namespace Database\Seeders;
 use App\Models\Hero;
 use App\Models\HeroProfile;
 use App\Models\Learner;
+use App\Models\Student;
+use App\Models\Student_Profile;
+use App\Models\StudentProfile;
 use App\Models\teacher;
 use App\Models\User;
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
@@ -22,6 +25,8 @@ class DatabaseSeeder extends Seeder
         // User::factory(10)->create();
         Hero::factory(10)->create();
         HeroProfile::factory(10)->create();
+        Student::factory(10)->create();
+        StudentProfile::factory(10)->create();
         // User::factory()->create([
         //     'name' => 'Test User',
         //     'email' => 'test@example.com',
