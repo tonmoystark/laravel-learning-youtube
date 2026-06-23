@@ -9,4 +9,8 @@ class StudentProfile extends Model
 {
     //
     use HasFactory;
+    public function student()
+    {
+        return $this->belongsTo(Student::class);
+    }
 }

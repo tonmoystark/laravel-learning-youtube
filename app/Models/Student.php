@@ -9,4 +9,9 @@ class Student extends Model
 {
     //
     use HasFactory;
+
+    public function profile()
+    {
+        return $this->hasOne(StudentProfile::class);
+    }
 }
