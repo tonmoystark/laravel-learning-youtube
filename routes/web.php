@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\HeroController;
+use App\Http\Controllers\MentorController;
 use App\Http\Controllers\StudentController;
 use App\Http\Controllers\TeacherController;
 use Illuminate\Support\Facades\Route;
@@ -30,4 +31,9 @@ Route::controller(TeacherController::class)->group(function () {
     Route::get('/teachers', 'index');
     Route::get('/teacher/{id}', 'viewDetails');
     Route::get('/teachers/courses', 'courses');
+});
+
+Route::controller(MentorController::class)->group(function () {
+    Route::get('/mentors', 'index');
+    Route::get('/mentor/{id}', 'viewCourse');
 });

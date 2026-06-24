@@ -6,6 +6,8 @@ use App\Models\Course;
 use App\Models\Hero;
 use App\Models\HeroProfile;
 use App\Models\Learner;
+use App\Models\Mentor;
+use App\Models\MentorCourse;
 use App\Models\Student;
 use App\Models\Student_Profile;
 use App\Models\StudentProfile;
@@ -34,6 +36,15 @@ class DatabaseSeeder extends Seeder
             ->has(TeacherProfile::factory(), 'profile')
             ->has(Course::factory()->count(3), 'courses')
             ->create();
+
+        Mentor::factory(10)->create();
+        MentorCourse::factory(5)->create();
+
+        Mentor::all()->each(function ($mentor) {
+            $mentor->courses()->attach(
+                Course::all()->random(3)->pluck('id')
+            );
+        });
 
         // User::factory()->create([
         //     'name' => 'Test User',
