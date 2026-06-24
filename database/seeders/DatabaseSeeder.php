@@ -2,13 +2,15 @@
 
 namespace Database\Seeders;
 
+use App\Models\Course;
 use App\Models\Hero;
 use App\Models\HeroProfile;
 use App\Models\Learner;
 use App\Models\Student;
 use App\Models\Student_Profile;
 use App\Models\StudentProfile;
-use App\Models\teacher;
+use App\Models\Teacher;
+use App\Models\TeacherProfile;
 use App\Models\User;
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
@@ -27,6 +29,12 @@ class DatabaseSeeder extends Seeder
         HeroProfile::factory(10)->create();
         Student::factory(10)->create();
         StudentProfile::factory(10)->create();
+        Teacher::factory()
+            ->count(10)
+            ->has(TeacherProfile::factory(), 'profile')
+            ->has(Course::factory()->count(3), 'courses')
+            ->create();
+
         // User::factory()->create([
         //     'name' => 'Test User',
         //     'email' => 'test@example.com',
