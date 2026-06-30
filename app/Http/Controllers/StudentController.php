@@ -16,7 +16,7 @@ class StudentController extends Controller
     }
     public function viewDetails(int $id)
     {
-        $student = Student::with('profile')->find($id);
+        $student = Student::with('profile')->findOrFail($id);
 
         return view('students.details', compact('student'));
     }

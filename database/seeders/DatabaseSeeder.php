@@ -29,8 +29,10 @@ class DatabaseSeeder extends Seeder
         // User::factory(10)->create();
         Hero::factory(10)->create();
         HeroProfile::factory(10)->create();
-        Student::factory(10)->create();
-        StudentProfile::factory(10)->create();
+        Student::factory()
+            ->count(10)
+            ->has(StudentProfile::factory(), 'profile')
+            ->create();
         Teacher::factory()
             ->count(10)
             ->has(TeacherProfile::factory(), 'profile')
