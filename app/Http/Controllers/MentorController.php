@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use App\Models\Mentor;
+use App\Models\Post;
+use App\Models\User;
 use Illuminate\Http\Request;
 
 class MentorController extends Controller

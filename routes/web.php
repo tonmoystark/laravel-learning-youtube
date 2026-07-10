@@ -36,4 +36,5 @@ Route::controller(TeacherController::class)->group(function () {
 Route::controller(MentorController::class)->group(function () {
     Route::get('/mentors', 'index');
     Route::get('/mentor/{id}', 'viewCourse');
+    Route::get('/mentors/posts', 'posts');
 });
